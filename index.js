@@ -1,11 +1,10 @@
 #!/usr/bin/env ts-node
 
-import sharp from 'sharp';
-import fs from 'fs';
+const sharp = require('sharp');
 
-const [_, __, colour, fileName] = process.argv;
+const [_, __, color, fileName] = process.argv;
 
-const genColorPreview = async (): Promise<void> => {
+const genColorPreview = async () => {
   const circleSize = 64;
   const circleRadius = circleSize / 2;
 
@@ -24,7 +23,7 @@ const genColorPreview = async (): Promise<void> => {
     .composite([
       {
         input: Buffer.from(
-          `<svg><circle cx="${circleRadius}" cy="${circleRadius}" r="${circleRadius}" fill="#${colour}" /></svg>`
+          `<svg><circle cx="${circleRadius}" cy="${circleRadius}" r="${circleRadius}" fill="#${color}" /></svg>`
         ),
         blend: 'dest-in',
       },
@@ -33,5 +32,3 @@ const genColorPreview = async (): Promise<void> => {
 };
 
 genColorPreview();
-
-export default genColorPreview
