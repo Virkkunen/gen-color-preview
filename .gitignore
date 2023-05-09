@@ -5,3 +5,5 @@ node_modules/
 .env.production.local
 .env.local
 .vscode-test
+*.png
+!assets/*.png
