@@ -5,7 +5,7 @@ import fs from 'fs';
 
 const [_, __, colour, fileName] = process.argv;
 
-const genColourPreview = async (): Promise<void> => {
+const genColorPreview = async (): Promise<void> => {
   const circleSize = 64;
   const circleRadius = circleSize / 2;
 
@@ -32,4 +32,6 @@ const genColourPreview = async (): Promise<void> => {
     .toFile(`${fileName}.png`);
 };
 
-genColourPreview();
+genColorPreview();
+
+export default genColorPreview
