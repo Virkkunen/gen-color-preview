@@ -1,11 +1,37 @@
 #!/usr/bin/env node
 
 const sharp = require('sharp');
-// const fs = require('fs');
+const yargs = require('yargs/yargs');
+const { hideBin } = require('yargs/helpers');
 
-const [_, __, color, fileName] = process.argv;
+// 
+const argv = yargs(hideBin(process.argv))
+  .usage('Usage: npx gen-color-preview --color <color> --output <fileName>')
+  .option('color', {
+    alias: 'c',
+    describe: 'RGB color value (#D20F39)',
+    demandOption: true,
+    type: 'string',
+    coerce: (color) => {
+      const hexRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+      if (!hexRegex.test(color)) throw new Error('Invalid color format. Please provide a valid hex color, e.g., "#D20F39"');
+      return color;
+    }
+  })
+  .option('output', {
+    alias: 'o',
+    describe: 'File name to save, without extension',
+    demandOption: true,
+    type: 'string'
+  })
+  .help('help')
+  .alias('help', 'h')
+  .argv;
+
 
 const genColorPreview = async () => {
+  const { color, output } = argv;
+
   const circleSize = 64;
   const circleRadius = circleSize / 2;
 
@@ -23,7 +49,8 @@ const genColorPreview = async () => {
   // generate the circle
   image.composite([{ input: circleSVG, blend: 'over' }]);
   // save
-  image.toFile(`${fileName}.png`);
+  image.toFile(`${output}.png`);
+  console.log(`Image saved as ${output}.png`);
 };
 
 genColorPreview();
