@@ -1,4 +1,4 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env node
 
 const sharp = require('sharp');
 const fs = require('fs');
@@ -19,7 +19,7 @@ const genColorPreview = async () => {
     },
   });
 
-  const circleSVG = Buffer.from(`<svg><circle cx="${circleRadius}" cy="${circleRadius}" r="${circleRadius}" fill="#${color}" /></svg>`);
+  const circleSVG = Buffer.from(`<svg><circle cx="${circleRadius}" cy="${circleRadius}" r="${circleRadius}" fill="${color}" /></svg>`);
   // generate the circle
   image.composite([{ input: circleSVG, blend: 'over' }]);
   // save
