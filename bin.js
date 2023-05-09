@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const sharp = require('sharp');
-const fs = require('fs');
+// const fs = require('fs');
 
 const [_, __, color, fileName] = process.argv;
 

@@ -1,8 +1,8 @@
 {
   "name": "gen-color-preview",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Simple script to generate a 64x64px colored circle",
-  "main": "index.js",
+  "main": "bin.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,18 +15,19 @@
     "palette",
     "colour",
     "color",
-    "circle"
+    "circle",
+    "generator"
   ],
   "author": "Virkkunen <vrkknn@vrkknn.net> (https://vrkknn.net)",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/Virkkunen/gen-color-preview/issues"
   },
   "homepage": "https://github.com/Virkkunen/gen-color-preview",
   "devDependencies": {
-    "@types/node": "^20.1.1",
-    "fs": "^0.0.1-security",
-    "sharp": "^0.32.1",
-    "ts-node": "^10.9.1"
+    "@types/node": "^20.1.1"
+  },
+  "dependencies": {
+    "sharp": "^0.32.1"
   }
 }
