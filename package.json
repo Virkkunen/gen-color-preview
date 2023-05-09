@@ -6,7 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["palette", "colour", "color", "circle"],
+  "keywords": [
+    "palette",
+    "colour",
+    "color",
+    "circle"
+  ],
   "author": "Virkkunen",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.1.1",
+    "sharp": "^0.32.1",
+    "ts-node": "^10.9.1"
+  }
 }
