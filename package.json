@@ -1,0 +1,12 @@
+{
+  "name": "gen-color-preview",
+  "version": "0.0.1",
+  "description": "Simple script to generate a 64x64px coloured circle",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["palette", "colour", "color", "circle"],
+  "author": "Virkkunen",
+  "license": "ISC"
+}
