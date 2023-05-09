@@ -1,7 +1,7 @@
 {
   "name": "gen-color-preview",
   "version": "1.0.2",
-  "description": "Simple script to generate a 64x64px coloured circle",
+  "description": "Simple script to generate a 64x64px colored circle",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Virkkunen/gen-color-preview",
   "devDependencies": {
     "@types/node": "^20.1.1",
+    "fs": "^0.0.1-security",
     "sharp": "^0.32.1",
     "ts-node": "^10.9.1"
   }

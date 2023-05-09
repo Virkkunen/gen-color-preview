@@ -1,6 +1,7 @@
 #!/usr/bin/env ts-node
 
 const sharp = require('sharp');
+const fs = require('fs');
 
 const [_, __, color, fileName] = process.argv;
 
@@ -9,7 +10,7 @@ const genColorPreview = async () => {
   const circleRadius = circleSize / 2;
 
   // properties
-  const image = sharp({
+  const image = await sharp({
     create: {
       width: circleSize,
       height: circleSize,
@@ -18,17 +19,11 @@ const genColorPreview = async () => {
     },
   });
 
-  // draw image
-  image
-    .composite([
-      {
-        input: Buffer.from(
-          `<svg><circle cx="${circleRadius}" cy="${circleRadius}" r="${circleRadius}" fill="#${color}" /></svg>`
-        ),
-        blend: 'dest-in',
-      },
-    ])
-    .toFile(`${fileName}.png`);
+  const circleSVG = Buffer.from(`<svg><circle cx="${circleRadius}" cy="${circleRadius}" r="${circleRadius}" fill="#${color}" /></svg>`);
+  // generate the circle
+  image.composite([{ input: circleSVG, blend: 'over' }]);
+  // save
+  image.toFile(`${fileName}.png`);
 };
 
 genColorPreview();
