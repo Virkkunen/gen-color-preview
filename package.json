@@ -1,6 +1,6 @@
 {
   "name": "gen-color-preview",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Simple script to generate a 64x64px colored circle",
   "main": "bin.js",
   "scripts": {
