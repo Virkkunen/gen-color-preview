@@ -7,10 +7,10 @@ A very simple package that creates a png image with a colored circle.
 
 ## Usage
 ```sh
-npx gen-color-preview --color '#d20f39' --output redCircle
+npx gen-color-preview --color <hexCode> --output <fileName>
 ```
 
-## Options
+### Options
 
 |    Command   |              Description             |  Type  | Required  |
 |:------------:|------------------------------------|:------:|:---------:|
@@ -19,9 +19,9 @@ npx gen-color-preview --color '#d20f39' --output redCircle
 | -h, --help   | Show help                            |        |           |
 | --version    | Show version                         |        |           |
 
-## Output
+### Output
 ```sh
-npx . -c '#d20f39' -o preview01
+npx gen-color-preview -c '#d20f39' -o preview01
 ```
 
 ![It's a circle alright](assets/preview01.png)
